@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REWIND - A Time Machine for the Internet</title>
+    <meta name="description" content="Experience the evolution of the web from 1995 to 2025" />
+    <meta name="author" content="Lovable" />
+    
+    <meta property="og:title" content="REWIND - A Time Machine for the Internet" />
+    <meta property="og:description" content="Experience the evolution of the web from 1995 to 2025" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Google Fonts for era-specific typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body class="min-h-screen bg-gray-50">
+    <div id="cursor"></div>
+    <header class=" text-black py-4">
+      <div class="container flex justify-center items-center mx-auto px-4">
+        <div>
+          <img class="h-[70px] w-[200px] object-cover" src="./WhatsApp Image 2025-04-25 at 15.02.02_d30064c2.png" alt="">
+          <p class="text-sm my-[-20px]">A Time Machine for the Internet</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mx-auto py-6">
+      <div class="title flex items-center justify-center flex-col">
+        <h1 class="font-semibold text-6xl my-4">Evolution of the Internet</h1>
+        <h3 class="text-xl text-[#34A4E4] font-medium tracking-widest my-4">A JOURNEY THROUGH TIME</h3>
+      </div>
+      <div id="year-selector" class="w-full max-w-xl mx-auto my-12 px-4 py-6">
+        <div class="flex flex-col items-center space-y-4">
+          <h2 id="year-display" class="text-3xl font-bold">2000</h2>
+          <div class="w-full">
+            <input 
+              type="range" 
+              id="year-slider" 
+              min="2000" 
+              max="2025" 
+              value="2000"
+              step="1" 
+              class="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer"
+            >
+          </div>
+          <div class="w-full flex justify-between text-sm font-medium">
+            <span>2000</span>
+            <span>2025</span>
+          </div>
+          <div class="text flex flex-col items-center">
+            <h2 class="text-xl font-medium ">Select a year to explore how the internet has evolved over time.</h2>
+            <p class="items-center whitespace-nowrap">From the slow dial-up connections of 2000 to the social media explosion of 2010 and the predicted immersive experiences of 2025, witness the remarkable transformation of our digital world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container mx-auto px-4 pb-12" id="content-container">
+      <div id="browser-frame" class="browser-frame">
+        <div id="browser-header" class="browser-header">
+          <div class="buttons">
+            <span class="button"></span>
+            <span class="button"></span>
+            <span class="button"></span>
+          </div>
+          <div id="browser-name" class="browser-name">Internet Explorer 5</div>
+          <div class="space"></div>
+        </div>
+        <div id="browser-content" class="browser-content">
+          <!-- Content will be dynamically loaded here -->
+          <div id="time-content" class="container mx-auto px-4 py-8 era-1">
+            <!-- Initial loading state -->
+            <div class="text-center py-12">
+              <div class="loading-spinner-era1 mx-auto mb-4"></div>
+              <p>Loading content...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-200 hidden">
+      <div>
+        <div class="flex flex-col items-center space-y-3">
+          <div class="w-64 h-5 bg-gray-300 border border-gray-500">
+            <div id="progress-bar" class="h-full bg-blue-600" style="width: 0%"></div>
+          </div>
+          <p id="loading-text" class="text-center">
+            Loading... 0%<br/>
+            <span class="text-sm">Please wait while the page loads...</span>
+          </p>
+          <div id="click-continue" class="animate-blink hidden">
+            Click anywhere to continue...
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-4 text-center">
+        <p>REWIND — A Time Machine for the Internet</p>
+        <p class="text-sm mt-2">Experience the evolution of the web from 1995 to 2025</p>
+      </div>
+    </footer>
+
+    <!-- IMPORTANT: DON'T REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="timelineData.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
